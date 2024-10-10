@@ -5,14 +5,35 @@
     text-decoration: none;
 }
 
+/* Custom Scrollbar */
+/* width of scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
-.playball-regular {
-    font-family: "Playball", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
+/* .playball-regular { */
+    /* font-family: "Playball", cursive; */
+    /* font-weight: 400; */
+    /* font-style: normal; */
+/* } */
 
 
 
@@ -31,87 +52,72 @@
 /* font-family: "Oswald", sans-serif; */
 
 
-
-
-#about a {
-    color: #000;
-    font-style: italic;
-}
-
-
-
 .body {
     margin: 0 50px;
     max-width: 100vw;
 }
 
-.active {
-    color: #000;
-    font-weight: 600;
-}
-
-h1 {
-    color: #000;
-}
-
-h3 {
-    color: #000;
-    font-family: "Rubik", sans-serif;
+header {
+    position: sticky;
+    top: 5px;
+    z-index: 999;
 }
 
 .header {
+    margin: 20px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 30px 80px;
-}
-
-.header h1 {
-    margin-left: 10px;
-    font-size: 50px;
-    font-weight: 500;
-    font-family: "Playball", cursive;
 }
 
 .header h1 a {
+    font-family: "Playball", cursive;
+    font-size: 1.5em;
+    letter-spacing: 0.05rem;
+    padding: 10px 20px;
     color: #000;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 nav li {
-    padding: 10px 30px;
-    margin: 10px 20px;
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 20px;
+    padding: 5px 20px;
+    margin: 5px 15px;
 }
 
-nav li :hover {
-    transform: scale(1.6);
-
+nav li:hover {   
+    transform: scale(1.15);
 }
 
 nav li a {
-    color: rgb(56, 56, 56);
+    padding: 5px 10px;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    color: rgb(43, 43, 43);
+    
 }
 
 nav li a:hover {
-    color: black;
+    color: #000;
+}
+
+.active {
+    color: #000;
+    transform: scale(1.1);
+    font-weight: bold;
 }
 
 #about {
-    margin-top: 80px;
+    margin: 100px 0 0 0;
+    padding: 0 100px;
     position: relative;
     display: flex;
-    justify-content: space-around;
-    line-height: 2.5rem;
+    justify-content: space-between;
 }
 
-#about .box1 {
+#about .box1 { 
     width: 250px;
     height: 250px;
     background-color: rgb(211, 211, 211);
@@ -134,46 +140,162 @@ nav li a:hover {
 }
 
 
-
-#about h3 {
-    font-size: 40px;
-    font-weight: 200;
-    z-index: 1;
-    margin-bottom: 40px;
-}
-
-#about span {
-    padding-right: 10px;
-    z-index: 1;
-}
-
-#about p {
-    font-family: "Oswald", sans-serif;
-    font-size: 30px;
-    z-index: 1;
-}
-
-#about .name {
-    color: #000;
-    font-weight: 600;
-    z-index: 1;
-}
-
-#about .small {
-    font-size: 25px;
-    z-index: 1;
-}
-
-#about img {
-    background-color: grey;
+#about .pic img {
     width: 400px;
-    border-radius: 10px;
-    z-index: 1;
+    border-radius: 20px;
+    transform: scale(normal);
+    transition: .8s;
 }
 
-#about img:hover {
-    transform: scale(0.9);
-    z-index: 1;
+#about .pic img:hover {
+    transform: scale(.90);
+    transition: .5s;
+}
+
+#about .me {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#about .me h3 {
+    font-weight: 100;
+    font-size: 40px;
+    font-family: "Oswald", sans-serif;
+    
+}
+
+#about .me span {
+    font-weight: bold;
+}
+
+#about .me p{
+    font-size: 30px;
+    margin-top: 0;
+    font-family: "Oswald", sans-serif;
+}
+
+#about .me .name {
+    margin-top: 20px;
+}
+
+#about .me .small{
+    font-size: 25px;
+    margin-top: 0;
+}
+
+.about-me {
+    width: 700px;
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "Oswald", sans-serif;
+}
+
+.about-me h3 {
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+
+.about-me P {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.about-me .m2 {
+    margin: 0 auto;
+}
+
+.project {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.project img {
+    width: 400px;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+}
+
+.project .img p {
+    margin: 15px 0;
+}
+
+.project .img p a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project .img p a:hover {
+    text-decoration: underline;
+}
+
+
+
+.form {
+    padding: 50px 10px;
+}
+
+.reach-me {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.form h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+
+textarea {
+    width: 400px;
+    height: 200px;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px 10px;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+}
+
+
+input {
+    padding: 8px 10px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background-color: rgb(155, 154, 154);
+    font-size: 18px;
+}
+
+input:hover {
+    transform: scale(1.05);
+}
+
+.contact {
+    width: 700px;
+    font-size: 25px;
+    line-height: 1.5em;
+}
+
+.contact .time {
+    font-size: 21px;
 }
 
 
@@ -181,7 +303,7 @@ footer {
     width: 100%;
     height: 100px;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 0 50px;
     display: flex;
     flex-direction: column;
 }
@@ -203,8 +325,13 @@ footer span {
     font-weight: bold;
 }
 
-@media (max-width: 1025px) {
+.links svg:hover {
+    fill: gray;
+    transition: .2s;
+}
+  
 
+ @media (max-width: 1025px) {
     .header {
         display: flex;
         flex-direction: column;
@@ -247,33 +374,141 @@ footer span {
         left: 200px;
         top: 10px;
     }
+
+    .project {
+        margin-top: 100px;
+    }
+
+    .reach-me {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+
+    textarea {
+        width: 300px;
+        height: 180px;
+        resize: none;
+        border-radius: 10px;
+        padding: 10px 10px;
+        font-family: "Oswald", sans-serif;
+        font-size: 18px;
+    }
+
+    .contact {
+        width: 550px;
+        font-size: 25px;
+        line-height: 1.1em;
+    }
 }
+
+@media (max-width: 850px){
+    #about {
+        margin: 100px 0 0 0;
+        padding: 0 100px;
+        flex-direction: column;
+        line-height: 40px;
+    }  
+
+    #about .box1 { 
+        width: 250px;
+        height: 250px;
+        left: 120px;
+    }
+    
+    #about .box2 {
+        width: 250px;
+        height: 250px;
+        left: 250px;
+    }
+    
+    #about .pic img {
+        width: 470px;
+        margin-top: 30px;
+    }
+    
+    #about .me p{
+        font-size: 25px;
+    }
+    
+    #about .me .small{
+        font-size: 20px;
+        line-height: initial;
+        margin-top: 0;
+    }
+    
+    .project img {
+        width: 500px;
+    }
+    
+    .project .img p a {
+        font-size: 18px;
+    }
+
+    .about-me {
+        width: auto;
+        margin: 100px auto 0;
+    } 
+}
+
+
 
 @media (max-width: 769px) {
-    body {
-        transform: scale(1);
-        text-align: center;
-    }
 
     #about {
-        text-align: left;
-    }
+        margin: 100px 0 0 0;
+        padding: 0 100px;
+        flex-direction: column;
+        line-height: 40px;
+    }  
 
-    #about .small {
+    #about .box1 { 
+        width: 250px;
+        height: 250px;
+        left: 120px;
+    }
+    
+    #about .box2 {
+        width: 250px;
+        height: 250px;
+        left: 250px;
+    }
+    
+    #about .pic img {
+        width: 470px;
+        margin-top: 30px;
+    }
+    
+    #about .me p{
+        font-size: 25px;
+    }
+    
+    #about .me .small{
         font-size: 20px;
+        line-height: initial;
+        margin-top: 0;
+    }
+    
+    .project img {
+        width: 500px;
+    }
+    
+    .project .img p a {
+        font-size: 18px;
     }
 
-    #about img {
-        width: 300px;
-    }
+    .about-me {
+        width: auto;
+        margin: 100px auto 0;
+    }    
+
 }
-
 
 
 @media (max-width: 540px) {
     .body {
         margin-top: 0px;
-        transform: scale(0.9);
     }
 
     nav {
@@ -295,39 +530,226 @@ footer span {
         align-items: center;
     }
 
-    #about img {
-        margin-top: 10px;
-    }
-
     #about .box {
         width: 180px;
         height: 180px;
     }
 
     #about .box1 {
-        left: 20px;
+        left: 50px;
         top: 100px;
     }
 
     #about .box2 {
-        left: 100px;
+        left: 200px;
         top: 10px;
     }
+
+    #about .me p {
+        text-align: left;
+    }
+
+    #about .pic img {
+        margin-top: 40px;
+        width: 400px;
+    }
+
+    #about .me{
+        width: 440px;
+    }
+
+    .about-me h3 {
+        font-size: 30px;
+    } 
+
+    .about-me p{
+        font-size: 20px;
+    } 
+
+    .project img {
+        width: 440px;
+    }
+    
 }
 
-@media (max-width:330px) {
+@media (max-width: 450px){
+    .header {
+        margin: 20px 0;
+    }
+    
+    .header h1 a {
+        font-size: 1em;
+    }
+    
     nav li {
-        margin: 0 8px;
-        padding: 0 6px;
+        padding: 5px 10px;
+        margin: 5px 0;
+    }
+    
+    nav li a {
+        padding: 5px 10px;
+        
     }
 
-    #about .box1 {
-        left: 10px;
-        top: 100px;
-    }
 
+    
+    #about .box1 { 
+        width: 200px;
+        height: 200px;
+        left: 0;
+    }
+    
     #about .box2 {
-        left: 80px;
-        top: 10px;
+        width: 200px;
+        height: 200px;
+        left: 100px;
     }
+    
+    
+    #about .pic img {
+        width: 350px;
+        border-radius: 20px;
+        transform: scale(normal);
+        transition: .8s;
+    }
+    
+    
+    #about .me h3 {
+        font-weight: 100;
+        font-size: 35px;
+        
+    }
+    
+    #about .me span {
+        font-weight: bold;
+    }
+    
+    #about .me p{
+        font-size: 20px;
+    }
+    
+    
+    #about .me .small{
+        font-size: 18px;
+    }
+
+    #about .me {
+        width: 350px;
+    }
+
+    .about-me h3 {
+        font-size: 28px;
+    } 
+
+    .about-me p{
+        font-size: 15px;
+    }
+
+    .project img {
+        width: 320px;
+    }
+
+    .contact {
+        width: 700px;
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 1.5em;
+    }
+    
+    .contact .time {
+        font-size: 15px;
+        font-weight: initial;
+        line-height: 1.4em;
+        text-wrap: wrap;
+    }
+
 }
+
+
+@media (max-width:380px) {
+    .body {
+        margin: 0;
+    }
+
+    nav li {
+        padding: 2px 5px;
+        margin: 0;
+    }
+    
+    nav li a {
+        padding: 5px 5px;
+        font-size: 15px;
+        
+    }
+
+    #about {
+        margin: 80px 0 0 ;
+    }  
+
+    #about .box1 { 
+        width: 180px;
+        height: 180px;
+        left: 30px;
+    }
+    
+    #about .box2 {
+        width: 180px;
+        height: 180px;
+        left: 80px;
+    }
+    
+    #about .pic img {
+         width: 300px;
+        padding-left: 0;
+    }
+
+    #about .me {
+        width: 280px;
+    }
+
+    #about .name{
+        margin-bottom: 0;
+    }
+
+    .project {
+    margin-top: 50px;
+    }
+
+    .project img {
+        width: 220px;
+    }
+
+
+
+    .about-me {
+        padding: 0 14px;
+    }
+
+    textarea {
+        width: 280px;
+        height: 150px;
+    }
+    
+    
+    .contact {
+        width: 700px;
+        font-size: 20px;
+        line-height: 1.5em;
+    }
+    
+    .contact .time {
+        font-size: 18px;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+
+}
+
+
+
+
+
+
+
